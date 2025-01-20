@@ -17,5 +17,6 @@
         <Frame Grid.Row="1" Name="MainFrame" ContentRendered="MainFrame_ContentRendered" NavigationUIVisibility="Hidden"></Frame>
         <Button Content="Back" Name="BtnBack"  HorizontalAlignment="Right"  Click="BtnBack_Click">
         </Button>
+        
     </Grid>
 </Window>

@@ -14,6 +14,42 @@
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="30"></RowDefinition>
         </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <WrapPanel Grid.Column="0" Margin="5">
+                <TextBlock Name="Count" FontSize="15" ></TextBlock>
+                <TextBlock Name="AllRecords" FontSize="15"></TextBlock>
+            </WrapPanel>
+            <WrapPanel Orientation="Vertical" Grid.Column="1" Margin="5">
+                <TextBlock Text="поиск по наименованию"></TextBlock>
+                <TextBox Name="PoiskPoNaim" TextChanged="PoiskPoNaim_TextChanged"></TextBox>
+            </WrapPanel>
+            <WrapPanel Orientation="Vertical" Grid.Column="2" Margin="5">
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <RadioButton GroupName="Miu" Name="Vozrast" Checked="Vozrast_Checked"></RadioButton>
+                    <TextBlock Text="по возрастанию стоимости"></TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <RadioButton GroupName="Miu" Name="Ubiv" Checked="Ubiv_Checked" ></RadioButton>
+                    <TextBlock Text="по убыванию стоимости"></TextBlock>
+                </StackPanel>
+            </WrapPanel>
+            <WrapPanel Grid.Column="3" Margin="5" Orientation="Vertical">
+                <TextBlock Text="фильтрация по скидке"></TextBlock>
+                <ComboBox Name="FiltrSkidka" Width="150" SelectionChanged="FiltrSkidka_SelectionChanged">
+                    <TextBlock>все записи</TextBlock>
+                    <TextBlock>0-9,99%</TextBlock>
+                    <TextBlock>10-14,99%</TextBlock>
+                    <TextBlock>15 и более</TextBlock>
+                </ComboBox>
+            </WrapPanel>
+        </Grid>
+
         <ListView Name="ProductListView" Grid.Row="1">
             <ListView.ItemTemplate>
                 <DataTemplate>
@@ -34,7 +70,7 @@
                                 <Binding Path="ProductPhotoPath" >
                                     <Binding.TargetNullValue>
                                         <ImageSource>
-                                            /Resources/picture.png              
+                                            /Resources/picture.png
                                         </ImageSource>
                                     </Binding.TargetNullValue>
                                 </Binding>

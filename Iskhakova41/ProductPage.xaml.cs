@@ -25,6 +25,62 @@ namespace Iskhakova41
             InitializeComponent();
             var currenntProduct = Iskhakova41Entities.GetContext().Product.ToList();
             ProductListView.ItemsSource = currenntProduct;
+            UpdateProducts();
+
+        }
+        private void UpdateProducts()
+        {
+            var currentProducts = Iskhakova41Entities.GetContext().Product.ToList();
+            if (FiltrSkidka.SelectedIndex == 0)
+            {
+                currentProducts = currentProducts.Where(p => (Convert.ToDouble(p.ProductDiscountAmount) >= 0 && Convert.ToDouble(p.ProductDiscountAmount) <= 100)).ToList();
+            }
+            if (FiltrSkidka.SelectedIndex == 1)
+            {
+                currentProducts = currentProducts.Where(p => (Convert.ToDouble(p.ProductDiscountAmount) >= 0 && Convert.ToDouble(p.ProductDiscountAmount) < 10)).ToList();
+            }
+            if (FiltrSkidka.SelectedIndex == 2)
+            {
+                currentProducts = currentProducts.Where(p => (Convert.ToDouble(p.ProductDiscountAmount) >= 10 && Convert.ToDouble(p.ProductDiscountAmount) < 15)).ToList();
+            }
+            if (FiltrSkidka.SelectedIndex == 3)
+            {
+                currentProducts  = currentProducts.Where(p => (Convert.ToDouble(p.ProductDiscountAmount) >= 15)).ToList();
+            }
+
+            currentProducts = currentProducts.Where(p => p.ProductName.ToLower().Contains(PoiskPoNaim.Text.ToLower())).ToList();
+            ProductListView.ItemsSource = currentProducts.ToList();
+            if (Ubiv.IsChecked.Value)
+            {
+                ProductListView.ItemsSource = currentProducts.OrderByDescending(p => p.ProductCost).ToList();
+            }
+            if (Vozrast.IsChecked.Value)
+            {
+                ProductListView.ItemsSource = currentProducts.OrderBy(p => p.ProductCost).ToList();
+            }
+            Count.Text = "количество " + currentProducts.Count.ToString() + " из " + Iskhakova41Entities.GetContext().Product.ToList().Count.ToString();
+        }
+        private void FiltrSkidka_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            UpdateProducts();
+        }
+
+        private void Ubiv_Checked(object sender, RoutedEventArgs e)
+        {
+            UpdateProducts();
+
+        }
+
+        private void Vozrast_Checked(object sender, RoutedEventArgs e)
+        {
+            UpdateProducts();
+
+        }
+
+        private void PoiskPoNaim_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            UpdateProducts();
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
