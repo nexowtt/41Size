@@ -16,3 +16,10 @@ D:\РПМ 3 курс\41 размер\Iskhakova41\Iskhakova41\obj\Debug\Iskhakova
 D:\РПМ 3 курс\41 размер\Iskhakova41\Iskhakova41\obj\Debug\Iskhakova41.exe
 D:\РПМ 3 курс\41 размер\Iskhakova41\Iskhakova41\obj\Debug\Iskhakova41.pdb
 D:\РПМ 3 курс\41 размер\Iskhakova41\Iskhakova41\obj\Debug\App.baml
+D:\РПМ 3 курс\41 размер\Iskhakova41\Iskhakova41\bin\Debug\EntityFramework.dll
+D:\РПМ 3 курс\41 размер\Iskhakova41\Iskhakova41\bin\Debug\EntityFramework.SqlServer.dll
+D:\РПМ 3 курс\41 размер\Iskhakova41\Iskhakova41\bin\Debug\EntityFramework.xml
+D:\РПМ 3 курс\41 размер\Iskhakova41\Iskhakova41\bin\Debug\EntityFramework.SqlServer.xml
+D:\РПМ 3 курс\41 размер\Iskhakova41\Iskhakova41\bin\Debug\ru\EntityFramework.resources.dll
+D:\РПМ 3 курс\41 размер\Iskhakova41\Iskhakova41\obj\Debug\Iskhakova41_Content.g.cs
+D:\РПМ 3 курс\41 размер\Iskhakova41\Iskhakova41\obj\Debug\Iskhakova41.csproj.CopyComplete

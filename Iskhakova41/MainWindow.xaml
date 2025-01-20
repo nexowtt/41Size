@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Iskhakova41"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" FontFamily="Tw Cen MT" Icon="Resources/logo.png">
+        Title="Iskhakova" Height="450" Width="800" FontFamily="Comic Sans MS" Icon="Resources/logo.png">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="75"/>

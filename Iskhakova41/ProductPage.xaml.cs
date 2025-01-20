@@ -23,6 +23,8 @@ namespace Iskhakova41
         public ProductPage()
         {
             InitializeComponent();
+            var currenntProduct = Iskhakova41Entities.GetContext().Product.ToList();
+            ProductListView.ItemsSource = currenntProduct;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
