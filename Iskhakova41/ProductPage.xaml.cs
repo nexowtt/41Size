@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,14 +21,47 @@ namespace Iskhakova41
     /// </summary>
     public partial class ProductPage : Page
     {
-        public ProductPage()
+        private User _user;
+        public ProductPage(User user)
         {
+            string logi;
+            string rol;
             InitializeComponent();
-            var currenntProduct = Iskhakova41Entities.GetContext().Product.ToList();
-            ProductListView.ItemsSource = currenntProduct;
-            UpdateProducts();
+            _user = user;
+            var currentProducts = Iskhakova41Entities.GetContext().Product.ToList();
+            ProductListView.ItemsSource = currentProducts;
+            if (user != null)
+            {
+                logi = user.UserSurname + user.UserName + user.UserPatronymic;
+                ima.Text = logi;
+                switch (user.UserRole)
+                {
+                    case 1:
+                        rol = "Клиент";
+                        break;
+                    case 2:
+                        rol = "Менеджер";
+                        break;
+                    case 3:
+                        rol = "Администратор";
+                        break;
+                    default:
+                        rol = "Гость";
+                        break;
 
+                }
+            }
+            else
+            {
+                rol = "Гость";
+            }
+
+            role.Text = rol;
+
+
+            UpdateProducts();
         }
+
         private void UpdateProducts()
         {
             var currentProducts = Iskhakova41Entities.GetContext().Product.ToList();
@@ -58,7 +92,7 @@ namespace Iskhakova41
             {
                 ProductListView.ItemsSource = currentProducts.OrderBy(p => p.ProductCost).ToList();
             }
-            Count.Text = "количество " + currentProducts.Count.ToString() + " из " + Iskhakova41Entities.GetContext().Product.ToList().Count.ToString();
+            Count.Text = "Количество " + currentProducts.Count.ToString() + " из " + Iskhakova41Entities.GetContext().Product.ToList().Count.ToString();
         }
         private void FiltrSkidka_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {

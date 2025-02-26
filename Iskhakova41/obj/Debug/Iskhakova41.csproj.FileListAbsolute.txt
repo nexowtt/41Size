@@ -23,3 +23,5 @@ D:\РПМ 3 курс\41 размер\Iskhakova41\Iskhakova41\bin\Debug\EntityFra
 D:\РПМ 3 курс\41 размер\Iskhakova41\Iskhakova41\bin\Debug\ru\EntityFramework.resources.dll
 D:\РПМ 3 курс\41 размер\Iskhakova41\Iskhakova41\obj\Debug\Iskhakova41_Content.g.cs
 D:\РПМ 3 курс\41 размер\Iskhakova41\Iskhakova41\obj\Debug\Iskhakova41.csproj.CopyComplete
+D:\РПМ 3 курс\41 размер\Iskhakova41\Iskhakova41\obj\Debug\AuthPage.g.cs
+D:\РПМ 3 курс\41 размер\Iskhakova41\Iskhakova41\obj\Debug\AuthPage.baml

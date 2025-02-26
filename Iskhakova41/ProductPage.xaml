@@ -21,7 +21,9 @@
                 <ColumnDefinition Width="auto"></ColumnDefinition>
                 <ColumnDefinition Width="auto"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <WrapPanel Grid.Column="0" Margin="5">
+            <WrapPanel Grid.Column="0" Margin="5" Orientation="Vertical">
+                <TextBlock Name="ima" FontSize="15"></TextBlock>
+                <TextBlock Name="role" FontSize="15"></TextBlock>
                 <TextBlock Name="Count" FontSize="15" ></TextBlock>
                 <TextBlock Name="AllRecords" FontSize="15"></TextBlock>
             </WrapPanel>
